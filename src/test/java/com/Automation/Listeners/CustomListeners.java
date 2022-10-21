@@ -54,17 +54,14 @@ public class CustomListeners extends TestBase implements ITestListener,ISuiteLis
 
 	public void onTestFailure(ITestResult result) {
 
-	
-		
-		
 		String excepionMessage=Arrays.toString(result.getThrowable().getStackTrace());
-		testReport.get().fail("<details>" + "<summary>" + "<b>" + "<font color=" + "red>" + "Exception Occured:Click to see"
-				+ "</font>" + "</b >" + "</summary>" +excepionMessage.replaceAll(",", "<br>")+"</details>"+" \n");
+		String methodName=result.getMethod().getMethodName();
+		String logText="<b>"+"TEST CASE:- "+ methodName.toUpperCase()+ " FAILED"+"</b>" + excepionMessage;
+		Markup m=MarkupHelper.createLabel(logText, ExtentColor.RED);
+		testReport.get().fail(m);
 		
 		
-		String failureLogg="TEST CASE FAILED";
-		Markup m = MarkupHelper.createLabel(failureLogg, ExtentColor.RED);
-		testReport.get().log(Status.FAIL, m);
+		
 
 	}
 
