@@ -7,8 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="SendMessage"/>
-          <include name="checkSavedMessage"/>
+          <include name="searchMessageInSlack"/>
         </methods>
       </class> <!-- com.Automation.testcases.SendMessage -->
     </classes>

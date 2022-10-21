@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import com.Automation.DataContext;
 
 import com.Automation.TestBase;
 import com.util.browser.BrowserActions;
@@ -53,10 +54,10 @@ public class LoginPage {
 	}
 	
 	 public void logInHomePage() {
-		    //System.out.println(AccountContext.getEmailAddress());
+		    System.out.println(DataContext.getEmailAddress());
 		    //System.out.println(AccountContext.getPassword());
-		    browserActions.enterTextInTextField(emailAddress, "monikaassudani91@gmail.com");
-		    browserActions.enterTextInTextField(password, "Lovemyself@148");
+		    browserActions.enterTextInTextField(emailAddress,DataContext.getEmailAddress());
+		    browserActions.enterTextInTextField(password, DataContext.getPassword());
 		    browserActions.moveTheCursorToElementAndClick(signIn);
 		  }
 		}

@@ -37,6 +37,21 @@ public class BrowserActions {
 	  }
   
 	
+  public WebElement retryingFindClick(WebElement element) {
+	    WebElement result = null;
+	    int attempts = 0;
+	    while(attempts < 3) {
+	        try {
+	        	element.click();
+	            result = element;
+	            break;
+	        } catch(StaleElementReferenceException e) {
+	        }
+	        attempts++;
+	    }
+	    return result;
+	}
+  
 	public boolean retryingClick(WebElement element) {
 		boolean result = false;
 	    int attempts = 0;
@@ -94,7 +109,7 @@ public class BrowserActions {
   }
 
   public void enterTextInTextField(WebElement webElement, String textToEnter) {
-    waitForCondition("click", webElement);
+    waitForCondition("clickAble", webElement);
     webElement.clear();
     webElement.sendKeys(textToEnter);
   }

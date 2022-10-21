@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-21T01:53:01Z" name="Default suite" finished-at="2022-10-21T01:54:08Z" duration-ms="66552">
+  <suite started-at="2022-10-21T08:41:07Z" name="Default suite" finished-at="2022-10-21T08:41:44Z" duration-ms="37219">
     <groups>
     </groups>
-    <test started-at="2022-10-21T01:53:01Z" name="Default test" finished-at="2022-10-21T01:54:08Z" duration-ms="66552">
+    <test started-at="2022-10-21T08:41:07Z" name="Default test" finished-at="2022-10-21T08:41:44Z" duration-ms="37219">
       <class name="com.Automation.testcases.SendMessage">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.Automation.testcases.SendMessage@31ea9581]" started-at="2022-10-21T01:52:39Z" name="setUp" finished-at="2022-10-21T01:53:01Z" duration-ms="21937" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.Automation.testcases.SendMessage@31ea9581]" started-at="2022-10-21T08:40:46Z" name="setUp" finished-at="2022-10-21T08:41:07Z" duration-ms="21282" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="SendMessage()[pri:-1, instance:com.Automation.testcases.SendMessage@31ea9581]" started-at="2022-10-21T01:53:01Z" name="SendMessage" finished-at="2022-10-21T01:53:40Z" duration-ms="39338" status="PASS">
+        <test-method signature="SendMessage()[pri:-1, instance:com.Automation.testcases.SendMessage@31ea9581]" started-at="2022-10-21T08:41:07Z" name="SendMessage" finished-at="2022-10-21T08:41:25Z" duration-ms="17466" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SendMessage -->
-        <test-method signature="checkSavedMessage()[pri:0, instance:com.Automation.testcases.SendMessage@31ea9581]" started-at="2022-10-21T01:53:40Z" name="checkSavedMessage" finished-at="2022-10-21T01:53:46Z" duration-ms="5883" status="PASS">
+        <test-method signature="checkSavedMessage()[pri:0, instance:com.Automation.testcases.SendMessage@31ea9581]" started-at="2022-10-21T08:41:25Z" name="checkSavedMessage" finished-at="2022-10-21T08:41:25Z" duration-ms="599" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkSavedMessage -->
-        <test-method signature="searchMessageInSlack()[pri:1, instance:com.Automation.testcases.SendMessage@31ea9581]" started-at="2022-10-21T01:53:46Z" name="searchMessageInSlack" finished-at="2022-10-21T01:54:07Z" duration-ms="20212" status="PASS">
+        <test-method signature="searchMessageInSlack()[pri:1, instance:com.Automation.testcases.SendMessage@31ea9581]" started-at="2022-10-21T08:41:25Z" name="searchMessageInSlack" finished-at="2022-10-21T08:41:43Z" duration-ms="17717" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchMessageInSlack -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Automation.testcases.SendMessage@31ea9581]" started-at="2022-10-21T01:54:07Z" name="tearDown" finished-at="2022-10-21T01:54:08Z" duration-ms="1066" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Automation.testcases.SendMessage@31ea9581]" started-at="2022-10-21T08:41:43Z" name="tearDown" finished-at="2022-10-21T08:41:44Z" duration-ms="1348" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
