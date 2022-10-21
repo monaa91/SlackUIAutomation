@@ -4,10 +4,14 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 
 import com.Automation.DataContext;
@@ -95,11 +99,13 @@ public class MessagingPage {
 	  }
 	  
 	  public void searchMessageInSlack() throws InterruptedException {
-		  
-		  Thread.sleep(5000);		  
+		  Wait<WebDriver> wait = browserActions.getWebDriverWait(120000);
+		  //browserActions.getWebDriverWait(60000);
+		  Thread.sleep(15000);
 		  browserActions.moveTheCursorToElementAndClick(searchBox);
 		  browserActions.enterTextInTextField(searchItem, "has:star");
-		  Thread.sleep(5000);
+		  //browserActions.enterTextInTextField(searchItem, Keys.ENTER);
+		  //Thread.sleep(5000);
 		  browserActions.moveTheCursorToElementAndClick(autoSuggestion);
 		  Thread.sleep(5000);
 		  String searchText = searchList.get(0).getText();

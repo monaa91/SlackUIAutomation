@@ -6,9 +6,6 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Date;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.AddressException;
-
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
