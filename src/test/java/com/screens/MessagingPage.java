@@ -99,15 +99,15 @@ public class MessagingPage {
 	  }
 	  
 	  public void searchMessageInSlack() throws InterruptedException {
-		  Wait<WebDriver> wait = browserActions.getWebDriverWait(120000);
+		  //Wait<WebDriver> wait = browserActions.getWebDriverWait(120000);
 		  //browserActions.getWebDriverWait(60000);
-		  Thread.sleep(15000);
+		  Thread.sleep(20000);
 		  browserActions.moveTheCursorToElementAndClick(searchBox);
 		  browserActions.enterTextInTextField(searchItem, "has:star");
 		  //browserActions.enterTextInTextField(searchItem, Keys.ENTER);
 		  //Thread.sleep(5000);
-		  browserActions.moveTheCursorToElementAndClick(autoSuggestion);
-		  Thread.sleep(5000);
+		  browserActions.retryingClick(autoSuggestion);
+		  Thread.sleep(10000);
 		  String searchText = searchList.get(0).getText();
 		  System.out.println("seacrhText is" + searchText);
 		  Assert.assertEquals(searchText, DataContext.getMessageToBeSaved());
