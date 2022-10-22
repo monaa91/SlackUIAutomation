@@ -68,10 +68,8 @@ public class MessagingPage {
 	  }
 	  
 	  public void goToBrowserAutomation() throws InterruptedException {
-		  //browserActions.waitForCondition("clickAble", browserAutomation);
 		  Thread.sleep(10000);
 		  browserActions.moveTheCursorToElementAndClick(browserAutomation);
-		  //browserActions.waitForCondition("clickAble, element);
 		  
 	  }
 	  
@@ -81,7 +79,9 @@ public class MessagingPage {
 		  browserActions.enterTextInTextField(sendMessage, Keys.ENTER);
 		  WebElement lastMessageSaved = browserActions.retryingFindClick(lastMessage);
 		  System.out.println("last Message saved is" + lastMessageSaved.getText());
-		  WebElement saveButton1 =  lastMessageSaved.findElement(By.cssSelector("button[data-qa='save_message']"));
+		  Wait<WebDriver> wait = browserActions.getWebDriverWait(240);
+		  wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//i[@class='c-icon c-icon--bookmark' and (@aria-hidden='true')]")));
+		  WebElement saveButton1 =  lastMessageSaved.findElement(By.xpath("//i[@class='c-icon c-icon--bookmark' and (@aria-hidden='true')]"));
 		  browserActions.moveTheCursorToElementAndClick(saveButton1);
 		  
 	  }
@@ -104,10 +104,8 @@ public class MessagingPage {
 			browserActions.moveTheCursorToElementAndClick(searchBox);
 			browserActions.enterTextInTextField(searchItem, "has:star");
 			browserActions.retryingClick(autoSuggestion);
-
-			Boolean result = null;
-			int attempts = 0;
-			while (attempts < 10) {
+            boolean flag = true;
+			while (flag) {
 				try {
 					browserActions.moveTheCursorToElementAndClick(searchBox);
 					browserActions.retryingClick(autoSuggestion);
@@ -115,13 +113,13 @@ public class MessagingPage {
 					String searchText = searchList.get(0).getText();
 					if (searchText.equalsIgnoreCase(DataContext.getMessageToBeSaved())) {
 						Assert.assertEquals(searchText, DataContext.getMessageToBeSaved());
+						flag = false;
 						break;
-					} else {
-						attempts++;
-
-					}
+					} 
 
 				} catch (StaleElementReferenceException e) {
+					
+					
 				}
 
 			}

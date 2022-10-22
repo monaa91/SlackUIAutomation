@@ -40,7 +40,7 @@ public class BrowserActions {
   public WebElement retryingFindClick(WebElement element) {
 	    WebElement result = null;
 	    int attempts = 0;
-	    while(attempts < 3) {
+	    while(attempts < 10) {
 	        try {
 	        	element.click();
 	            result = element;
@@ -55,7 +55,7 @@ public class BrowserActions {
 	public boolean retryingClick(WebElement element) {
 		boolean result = false;
 	    int attempts = 0;
-	    while(attempts < 3) {
+	    while(attempts < 10) {
 	        try {
 	        	element.click();
 	            result = true;
