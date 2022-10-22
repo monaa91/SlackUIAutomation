@@ -42,6 +42,8 @@ public class TestBase {
 	@BeforeSuite
 	public void setUp() throws InterruptedException {
 	
+		
+		
 		if(driver==null) {
 			try {
 				fis = new FileInputStream(System.getProperty("user.dir")+"//src//test//resources//properties//Config.properties");
@@ -91,7 +93,7 @@ public class TestBase {
 		loginPage.domainLogin();
 	    loginPage.logInHomePage();
 	    driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")), TimeUnit.SECONDS);
-		wait = new WebDriverWait(driver, 20);
+		wait = new WebDriverWait(driver, 5);
 		
 	}
 	

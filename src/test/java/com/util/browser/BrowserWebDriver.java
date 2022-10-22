@@ -11,7 +11,7 @@ public class BrowserWebDriver {
     System.setProperty(
         "webdriver.chrome.driver", "./src/test/resources/browserdrivers/chromedriver.exe");
     ChromeOptions options = new ChromeOptions();
-    options.addArguments("--headless");
+    //options.addArguments("--headless");
     return new ChromeDriver(options);
   }
 }

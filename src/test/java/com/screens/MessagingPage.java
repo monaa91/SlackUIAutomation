@@ -1,6 +1,7 @@
 package com.screens;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -98,20 +99,31 @@ public class MessagingPage {
 		  Assert.assertEquals(firstElementSaved, DataContext.getMessageToBeSaved()); 
 	  }
 	  
-	  public void searchMessageInSlack() throws InterruptedException {
-		  //Wait<WebDriver> wait = browserActions.getWebDriverWait(120000);
-		  //browserActions.getWebDriverWait(60000);
-		  Thread.sleep(20000);
-		  browserActions.moveTheCursorToElementAndClick(searchBox);
-		  browserActions.enterTextInTextField(searchItem, "has:star");
-		  //browserActions.enterTextInTextField(searchItem, Keys.ENTER);
-		  //Thread.sleep(5000);
-		  browserActions.retryingClick(autoSuggestion);
-		  Thread.sleep(10000);
-		  String searchText = searchList.get(0).getText();
-		  System.out.println("seacrhText is" + searchText);
-		  Assert.assertEquals(searchText, DataContext.getMessageToBeSaved());
-		  
-	  }
+		public void searchMessageInSlack() throws InterruptedException {
+			Wait<WebDriver> wait = browserActions.getWebDriverWait(120000);
+			browserActions.moveTheCursorToElementAndClick(searchBox);
+			browserActions.enterTextInTextField(searchItem, "has:star");
+			browserActions.retryingClick(autoSuggestion);
 
-}
+			Boolean result = null;
+			int attempts = 0;
+			while (attempts < 10) {
+				try {
+					browserActions.moveTheCursorToElementAndClick(searchBox);
+					browserActions.retryingClick(autoSuggestion);
+					webDriver.manage().timeouts().implicitlyWait(Integer.parseInt("20"), TimeUnit.SECONDS);
+					String searchText = searchList.get(0).getText();
+					if (searchText.equalsIgnoreCase(DataContext.getMessageToBeSaved())) {
+						Assert.assertEquals(searchText, DataContext.getMessageToBeSaved());
+						break;
+					} else {
+						attempts++;
+
+					}
+
+				} catch (StaleElementReferenceException e) {
+				}
+
+			}
+		}
+	}

@@ -7,7 +7,10 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.openqa.selenium.Keys;import java.lang.reflect.InvocationTargetException;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +18,7 @@ import com.Automation.*;
 import com.screens.LoginPage;
 import com.screens.MessagingPage;
 import com.util.browser.BrowserActions;
+import com.util.browser.BrowserWebDriver;
 
 @Test
 public class SendMessage extends TestBase{
@@ -23,8 +27,11 @@ public class SendMessage extends TestBase{
 	private MessagingPage messagingPage;
 	
 	
+	
+	
 	    @Test(priority = -1)
 		public void SendMessage() throws InterruptedException {	
+	    	
 	    	messagingPage = new MessagingPage(driver);
 	    	//Thread.sleep(10000);    
 	    	messagingPage.goToBrowserAutomation();
@@ -36,6 +43,7 @@ public class SendMessage extends TestBase{
 	
 	  @Test(priority = 0)
 	  public void checkSavedMessage() throws InterruptedException {
+	
 	  messagingPage = new MessagingPage(driver);
 	  messagingPage.clickSavedItems();
 	  messagingPage.fetchFirstElement();
