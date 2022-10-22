@@ -44,7 +44,7 @@ public class TestBase {
 	
 		if(driver==null) {
 			try {
-				fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\properties\\Config.properties");
+				fis = new FileInputStream(System.getProperty("user.dir")+"//src//test//resources//properties//Config.properties");
 			}
 			catch(FileNotFoundException e) {
 				e.printStackTrace();
@@ -59,7 +59,7 @@ public class TestBase {
 			}
 			
 			try {
-				fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\properties\\OR.properties");
+				fis = new FileInputStream(System.getProperty("user.dir")+"//src//test//resources//properties//OR.properties");
 			}
 			catch(FileNotFoundException e) {
 				e.printStackTrace();
