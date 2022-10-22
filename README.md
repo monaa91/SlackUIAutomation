@@ -1,9 +1,9 @@
-######SlackUIAutomation
+#SlackUIAutomation
 
 Automate slack UI on web browser to evaluate the message sent to slack from the slack client.
 An account on slack with slack with a workspace Automationteam and Channel #browser-automation
 
-###Pre-Requistes
+##Pre-Requistes
 Windows machine server/mac-os
 Chrome Browser Installed
 Java JDK 17
@@ -12,7 +12,7 @@ Slack Account created with Automationteam as workspace name with #browser-automa
 
 Maven Selenium project which is running in headless mode without any issues in your local machine
 
-####Commands to Checkout the code and steps to execute:
+##Commands to Checkout the code and steps to execute:
 Pull main branch
 git clone https://github.com/monaa91/SlackUIAutomation.git
 
@@ -20,18 +20,18 @@ To test against your local environment, simply execute the:
 
 mvn -B package --file pom.xml
 
-####Command to run tests on CI(GITHUB) Right now the repo is hosted on GIT, up on each commit to main and on each pull request the build will run. Developer doesn’t have to do anything explicitly to kick the build.
+##Command to run tests on CI(GITHUB) Right now the repo is hosted on GIT, up on each commit to main and on each pull request the build will run. Developer doesn’t have to do anything explicitly to kick the build.
 
-#Extent report will be generated in the below location:
+##Extent report will be generated in the below location:
 
 /reports/Extent**.html
 
-#Sure fire report which is a default report for TestNG will be generated in the below location:
+##Sure fire report which is a default report for TestNG will be generated in the below location:
 
 /target/surefire-reports/index.html
 
 
-###FLOW of the Program:
+##FLOW of the Program:
 TestBase.java is the class where the driver is getting initiated and closed on test start and completion respectively. Using @BeforeSuite and @AfterSuite annotations.
 
 SendMessage.java is the Test class which extends the base class. It has 3 test cases which needs to be executed in sequential manner.
