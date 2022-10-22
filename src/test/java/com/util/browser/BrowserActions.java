@@ -109,7 +109,9 @@ public class BrowserActions {
   }
 
   public void enterTextInTextField(WebElement webElement, String textToEnter) {
-    waitForCondition("clickAble", webElement);
+	  retryingFindClick(webElement);
+	  System.out.println("printed");
+    //waitForCondition("clickAble", webElement);
     webElement.clear();
     webElement.sendKeys(textToEnter);
   }
